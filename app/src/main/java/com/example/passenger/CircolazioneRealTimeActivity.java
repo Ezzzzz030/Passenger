@@ -40,19 +40,25 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 public class CircolazioneRealTimeActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
-    ActivityCircolazioneRealTimeBinding binding;
+    public CircolazioneRealTimeActivity() {
+
+        super();
+
+        // leggo le stazioni dal finto database
+        stazioni = new ArrayList<>();
+        stazioni.addAll(Utility.getFakeStazioni());
+    }
+    private final ArrayList<Stazione> stazioni;
+    private ActivityCircolazioneRealTimeBinding binding;
+    private SearchView searchView;
 
     public ArrayList<Stazione> getStazioni() {
         return stazioni;
     }
 
-    ArrayList<Stazione> stazioni;
-
     public SearchView getSearchView() {
         return searchView;
     }
-
-    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +66,6 @@ public class CircolazioneRealTimeActivity extends AppCompatActivity implements T
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_circolazione_real_time);
         changeColorStatusBar();
-
-        stazioni = new ArrayList<Stazione>();
-        stazioni.addAll(Utility.getFakeStazioni());
 
         binding = ActivityCircolazioneRealTimeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -110,8 +113,6 @@ public class CircolazioneRealTimeActivity extends AppCompatActivity implements T
 
                 @Override
                 public boolean onQueryTextChange(String newText) {
-                    // inside on query text change method we are
-                    // calling a method to filter our recycler view.
                     filter(newText);
                     return false;
                 }
@@ -125,7 +126,7 @@ public class CircolazioneRealTimeActivity extends AppCompatActivity implements T
     public void filter(String newText) {
 
         ArrayList<Stazione> unFilteredStazioniList = stazioni;
-        ArrayList<Stazione> filteredStazioniList = new ArrayList<Stazione>();
+        ArrayList<Stazione> filteredStazioniList = new ArrayList<>();
 
         ViewPager viewPager = findViewById(R.id.viewPager_circolazioneRealTime);
 
@@ -163,7 +164,7 @@ public class CircolazioneRealTimeActivity extends AppCompatActivity implements T
     private void changeColorStatusBar()
     {
         Window window = this.getWindow();
-        // finally change the color
+        // cambio il colore della status bar
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
     }

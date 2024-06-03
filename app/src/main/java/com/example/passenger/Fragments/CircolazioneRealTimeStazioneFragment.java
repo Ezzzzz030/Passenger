@@ -28,16 +28,16 @@ import com.example.passenger.Utility.Utility;
 import java.util.ArrayList;
 
 public class CircolazioneRealTimeStazioneFragment extends Fragment {
+
     private RecyclerView recyclerView_stazioni;
     private SearchView searchView;
     CircolazioneRealTimeActivity activity;
     public CircolazioneRealTimeStazioneFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_circolazione_real_time_stazione, container, false);
 
@@ -45,13 +45,20 @@ public class CircolazioneRealTimeStazioneFragment extends Fragment {
 
         activity = (CircolazioneRealTimeActivity) this.getContext();
 
+        if(activity != null)
+        {
+            fillRecyclerView(activity.getStazioni());
+        }
+
+        return view;
+    }
+
+    public void fillRecyclerView(ArrayList<Stazione> stazioni)
+    {
         StazioneRecyclerViewAdapter adapter = new StazioneRecyclerViewAdapter(this.getContext());
         adapter.setStazione(activity.getStazioni());
 
         recyclerView_stazioni.setAdapter(adapter);
         recyclerView_stazioni.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
-        return view;
     }
-
 }

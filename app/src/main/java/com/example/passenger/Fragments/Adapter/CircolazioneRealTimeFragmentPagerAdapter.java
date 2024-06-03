@@ -9,6 +9,14 @@ import java.util.ArrayList;
 
 public class CircolazioneRealTimeFragmentPagerAdapter extends FragmentPagerAdapter {
 
+    public ArrayList<Fragment> getFragmentsArrayList() {
+        return fragmentsArrayList;
+    }
+
+    public ArrayList<String> getFragmentTitles() {
+        return fragmentTitles;
+    }
+
     private final ArrayList<Fragment> fragmentsArrayList = new ArrayList<>();
     private final ArrayList<String> fragmentTitles = new ArrayList<>();
     public CircolazioneRealTimeFragmentPagerAdapter(@NonNull FragmentManager fm) {
