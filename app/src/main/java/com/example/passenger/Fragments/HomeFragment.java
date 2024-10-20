@@ -8,22 +8,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.passenger.CircolazioneRealTimeActivity;
-import com.example.passenger.MainActivity;
+import com.example.passenger.Activity.CircolazioneRealTimeActivity;
+import com.example.passenger.Activity.MainActivity;
 import com.example.passenger.R;
-import com.example.passenger.RecycleView.Adapter.StazioneRecyclerViewAdapter;
 import com.example.passenger.RecycleView.Adapter.TrenoPreferitoRecyclerViewAdapter;
 import com.example.passenger.Utility.Utility;
-import com.example.passenger.databinding.ActivityMainBinding;
-import com.example.passenger.databinding.FragmentHomeBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeFragment extends Fragment {
     CardView cardView_circolazioneRealTime;

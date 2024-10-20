@@ -1,5 +1,9 @@
 package com.example.passenger.Utility;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+
+import android.net.ConnectivityManager;
 import com.example.passenger.RecycleView.Models.Stazione;
 import com.example.passenger.RecycleView.Models.Treno;
 
@@ -8,6 +12,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Utility {
+    public static boolean isNetworkConnected(Context ctx) {
+        if ( ctx == null ) return true;
+        ConnectivityManager cm = (ConnectivityManager)ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
     public static ArrayList<Stazione> getFakeStazioni()
     {
         ArrayList<Stazione> stazioni = new ArrayList<>();

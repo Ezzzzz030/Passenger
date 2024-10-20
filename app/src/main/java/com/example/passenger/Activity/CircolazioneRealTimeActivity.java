@@ -1,27 +1,16 @@
-package com.example.passenger;
+package com.example.passenger.Activity;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -30,11 +19,11 @@ import com.example.passenger.Fragments.Adapter.CircolazioneRealTimeFragmentPager
 import com.example.passenger.Fragments.CircolazioneRealTimeLineaFragment;
 import com.example.passenger.Fragments.CircolazioneRealTimeStazioneFragment;
 import com.example.passenger.Fragments.CircolazioneRealTimeTrenoFragment;
+import com.example.passenger.R;
 import com.example.passenger.RecycleView.Adapter.StazioneRecyclerViewAdapter;
 import com.example.passenger.RecycleView.Models.Stazione;
 import com.example.passenger.Utility.Utility;
 import com.example.passenger.databinding.ActivityCircolazioneRealTimeBinding;
-import com.example.passenger.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
