@@ -44,13 +44,6 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Toolbar toolbarHome = view.findViewById(R.id.toolbar_home);
-
-        toolbarHome.setTitleTextColor(Color.parseColor("#FFCDD2"));
-
-        ((MainActivity)getActivity()).setSupportActionBar(toolbarHome);
-
-
         cardView_circolazioneRealTime = view.findViewById(R.id.cardView_circolazioneRealTime);
         cardView_circolazioneRealTime.setOnClickListener(new View.OnClickListener() {
             @Override
